@@ -1,0 +1,10 @@
+data/raw/
+data/*.duckdb
+.env
+__pycache__/
+*.pyc
+*.egg-info/
+.DS_Store
+airflow/logs/
+dbt_energia/target/
+dbt_energia/.user.yml
