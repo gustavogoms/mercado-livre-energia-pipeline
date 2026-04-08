@@ -25,3 +25,39 @@
 [0m16:18:56  [32mCompleted successfully[0m
 [0m16:18:56  
 [0m16:18:56  Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
+/usr/bin/bash: line 1: /home/airflow/.local/bin/dbt: No such file or directory
+/usr/bin/bash: line 1: /home/airflow/.local/bin/dbt: No such file or directory
+/usr/bin/bash: line 1: /home/airflow/.local/bin/dbt: No such file or directory
+/usr/bin/bash: line 1: /home/airflow/.local/bin/dbt: No such file or directory
+/usr/bin/bash: line 1: /home/airflow/.local/bin/dbt: No such file or directory
+/usr/bin/bash: line 1: /home/airflow/.local/bin/dbt: No such file or directory
+[0m17:21:56  Running with dbt=1.11.7
+[0m17:21:56  Registered adapter: duckdb=1.10.1
+[0m17:21:57  Found 7 models, 475 macros
+[0m17:21:57  
+[0m17:21:57  Concurrency: 1 threads (target='dev')
+[0m17:21:57  
+[0m17:21:57  1 of 7 START sql view model main.stg_migracao .................................. [RUN]
+[0m17:21:57  1 of 7 OK created sql view model main.stg_migracao ............................. [[32mOK[0m in 0.11s]
+[0m17:21:57  2 of 7 START sql view model main.stg_pld_ccee .................................. [RUN]
+[0m17:21:57  2 of 7 OK created sql view model main.stg_pld_ccee ............................. [[32mOK[0m in 0.05s]
+[0m17:21:57  3 of 7 START sql view model main.stg_tarifas_aneel ............................. [RUN]
+[0m17:21:57  3 of 7 OK created sql view model main.stg_tarifas_aneel ........................ [[32mOK[0m in 0.05s]
+[0m17:21:57  4 of 7 START sql table model main.mart_migracao_mercado_livre .................. [RUN]
+[0m17:21:57  4 of 7 OK created sql table model main.mart_migracao_mercado_livre ............. [[32mOK[0m in 0.12s]
+[0m17:21:57  5 of 7 START sql view model main.int_pld_vs_tarifa ............................. [RUN]
+[0m17:21:57  5 of 7 OK created sql view model main.int_pld_vs_tarifa ........................ [[32mOK[0m in 0.05s]
+[0m17:21:57  6 of 7 START sql table model main.mart_comparativo_tarifas ..................... [RUN]
+[0m17:21:57  6 of 7 OK created sql table model main.mart_comparativo_tarifas ................ [[32mOK[0m in 0.07s]
+[0m17:21:57  7 of 7 START sql table model main.mart_simulador_economia ...................... [RUN]
+[0m17:21:57  7 of 7 OK created sql table model main.mart_simulador_economia ................. [[32mOK[0m in 0.06s]
+[0m17:21:57  
+[0m17:21:57  Finished running 3 table models, 4 view models in 0 hours 0 minutes and 0.76 seconds (0.76s).
+[0m17:21:58  
+[0m17:21:58  [32mCompleted successfully[0m
+[0m17:21:58  
+[0m17:21:58  Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
+[0m17:22:05  Running with dbt=1.11.7
+[0m17:22:05  Registered adapter: duckdb=1.10.1
+[0m17:22:05  Found 7 models, 475 macros
+[0m17:22:05  Nothing to do. Try checking your model configs and model specification args
