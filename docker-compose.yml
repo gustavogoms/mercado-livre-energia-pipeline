@@ -69,7 +69,12 @@ services:
 
   airflow-scheduler:
     <<: *airflow-common
-    command: scheduler
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        pip install dbt-core dbt-duckdb --quiet
+        airflow scheduler
     restart: unless-stopped
     depends_on:
       postgres:
