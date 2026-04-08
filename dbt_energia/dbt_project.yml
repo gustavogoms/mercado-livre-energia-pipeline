@@ -1,0 +1,21 @@
+name: dbt_energia
+version: '1.0.0'
+config-version: 2
+
+profile: dbt_energia
+
+model-paths: ["models"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+
+target-path: "target"
+clean-targets: ["target"]
+
+models:
+  dbt_energia:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table

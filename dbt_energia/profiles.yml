@@ -1,0 +1,7 @@
+dbt_energia:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: /opt/airflow/data/energia.duckdb
+      threads: 1

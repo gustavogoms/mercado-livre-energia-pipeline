@@ -1,0 +1,563 @@
+[0m16:18:54.248089 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6597563f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6598d2b3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6597563c10>]}
+
+
+============================== 16:18:54.255502 | 76711e2c-9987-4a16-8b49-e430b10a798f ==============================
+[0m16:18:54.255502 [info ] [MainThread]: Running with dbt=1.11.7
+[0m16:18:54.256162 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'warn_error': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --profiles-dir .', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'static_parser': 'True', 'introspect': 'True', 'printer_width': '80', 'empty': 'False', 'use_experimental_parser': 'False', 'use_colors': 'True', 'profiles_dir': '.', 'quiet': 'False', 'debug': 'False', 'partial_parse': 'True', 'fail_fast': 'False', 'write_json': 'True', 'no_print': 'None', 'log_path': '/opt/airflow/dbt_energia/logs', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False'}
+[0m16:18:54.563851 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '76711e2c-9987-4a16-8b49-e430b10a798f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f65973d2810>]}
+[0m16:18:54.652966 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '76711e2c-9987-4a16-8b49-e430b10a798f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6598afe8d0>]}
+[0m16:18:54.655854 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m16:18:54.749960 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m16:18:54.750811 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m16:18:54.751260 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '76711e2c-9987-4a16-8b49-e430b10a798f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f658b586890>]}
+[0m16:18:56.091595 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '76711e2c-9987-4a16-8b49-e430b10a798f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f658b4cbb90>]}
+[0m16:18:56.157105 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_energia/target/manifest.json
+[0m16:18:56.158895 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_energia/target/semantic_manifest.json
+[0m16:18:56.207817 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '76711e2c-9987-4a16-8b49-e430b10a798f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f658b3ebf10>]}
+[0m16:18:56.208378 [info ] [MainThread]: Found 7 models, 475 macros
+[0m16:18:56.208739 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '76711e2c-9987-4a16-8b49-e430b10a798f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f658b3c5910>]}
+[0m16:18:56.210903 [info ] [MainThread]: 
+[0m16:18:56.211277 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m16:18:56.211567 [info ] [MainThread]: 
+[0m16:18:56.212089 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m16:18:56.218019 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_energia'
+[0m16:18:56.274062 [debug] [ThreadPool]: Using duckdb connection "list_energia"
+[0m16:18:56.274559 [debug] [ThreadPool]: On list_energia: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "connection_name": "list_energia"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"energia"'
+    
+  
+  
+[0m16:18:56.274888 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:18:56.296938 [debug] [ThreadPool]: SQL status: OK in 0.022 seconds
+[0m16:18:56.298643 [debug] [ThreadPool]: On list_energia: Close
+[0m16:18:56.299669 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_energia, now create_energia_main)
+[0m16:18:56.300328 [debug] [ThreadPool]: Creating schema "database: "energia"
+schema: "main"
+"
+[0m16:18:56.308209 [debug] [ThreadPool]: Using duckdb connection "create_energia_main"
+[0m16:18:56.308717 [debug] [ThreadPool]: On create_energia_main: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "connection_name": "create_energia_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='energia'
+        and type='sqlite'
+    
+  
+[0m16:18:56.309033 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:18:56.310803 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m16:18:56.312480 [debug] [ThreadPool]: Using duckdb connection "create_energia_main"
+[0m16:18:56.312812 [debug] [ThreadPool]: On create_energia_main: BEGIN
+[0m16:18:56.313506 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m16:18:56.313902 [debug] [ThreadPool]: Using duckdb connection "create_energia_main"
+[0m16:18:56.314274 [debug] [ThreadPool]: On create_energia_main: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "connection_name": "create_energia_main"} */
+
+    
+    
+        create schema if not exists "energia"."main"
+    
+[0m16:18:56.315167 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m16:18:56.316094 [debug] [ThreadPool]: On create_energia_main: COMMIT
+[0m16:18:56.316578 [debug] [ThreadPool]: Using duckdb connection "create_energia_main"
+[0m16:18:56.316915 [debug] [ThreadPool]: On create_energia_main: COMMIT
+[0m16:18:56.317623 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m16:18:56.317972 [debug] [ThreadPool]: On create_energia_main: Close
+[0m16:18:56.320255 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_energia_main, now list_energia_main)
+[0m16:18:56.326629 [debug] [ThreadPool]: Using duckdb connection "list_energia_main"
+[0m16:18:56.327032 [debug] [ThreadPool]: On list_energia_main: BEGIN
+[0m16:18:56.327340 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:18:56.328210 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m16:18:56.328642 [debug] [ThreadPool]: Using duckdb connection "list_energia_main"
+[0m16:18:56.329027 [debug] [ThreadPool]: On list_energia_main: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "connection_name": "list_energia_main"} */
+select
+      'energia' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'energia'
+  
+[0m16:18:56.333289 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m16:18:56.335415 [debug] [ThreadPool]: On list_energia_main: ROLLBACK
+[0m16:18:56.336337 [debug] [ThreadPool]: Failed to rollback 'list_energia_main'
+[0m16:18:56.336719 [debug] [ThreadPool]: On list_energia_main: Close
+[0m16:18:56.337598 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '76711e2c-9987-4a16-8b49-e430b10a798f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f658b35f5d0>]}
+[0m16:18:56.338180 [debug] [MainThread]: Using duckdb connection "master"
+[0m16:18:56.338623 [debug] [MainThread]: On master: BEGIN
+[0m16:18:56.338957 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:18:56.339920 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m16:18:56.340263 [debug] [MainThread]: On master: COMMIT
+[0m16:18:56.340583 [debug] [MainThread]: Using duckdb connection "master"
+[0m16:18:56.340893 [debug] [MainThread]: On master: COMMIT
+[0m16:18:56.341539 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m16:18:56.341976 [debug] [MainThread]: On master: Close
+[0m16:18:56.347573 [debug] [Thread-1 (]: Began running node model.dbt_energia.stg_migracao
+[0m16:18:56.348209 [info ] [Thread-1 (]: 1 of 7 START sql view model main.stg_migracao .................................. [RUN]
+[0m16:18:56.348736 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_energia_main, now model.dbt_energia.stg_migracao)
+[0m16:18:56.349114 [debug] [Thread-1 (]: Began compiling node model.dbt_energia.stg_migracao
+[0m16:18:56.356739 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_energia.stg_migracao"
+[0m16:18:56.358771 [debug] [Thread-1 (]: Began executing node model.dbt_energia.stg_migracao
+[0m16:18:56.390876 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_energia.stg_migracao"
+[0m16:18:56.392877 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.stg_migracao"
+[0m16:18:56.393263 [debug] [Thread-1 (]: On model.dbt_energia.stg_migracao: BEGIN
+[0m16:18:56.393607 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:18:56.394642 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.395108 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.stg_migracao"
+[0m16:18:56.395553 [debug] [Thread-1 (]: On model.dbt_energia.stg_migracao: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.stg_migracao"} */
+
+  
+  create view "energia"."main"."stg_migracao__dbt_tmp" as (
+    with source as (
+    select *
+    from read_parquet('/opt/airflow/data/raw/migracao_mercado_livre_*.parquet')
+),
+
+renamed as (
+    select
+        trim(distribuidora)                         as distribuidora,
+        trim(uf)                                    as uf,
+        cast(ano as integer)                        as ano,
+        cast(consumidores_livres_count as integer)  as consumidores_livres,
+        cast(consumo_total_mwh as double)           as consumo_total_mwh,
+        cast(percentual_mercado_livre as double)    as pct_mercado_livre
+    from source
+    where consumidores_livres_count > 0
+)
+
+select * from renamed
+  );
+
+[0m16:18:56.397424 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.404739 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.stg_migracao"
+[0m16:18:56.405287 [debug] [Thread-1 (]: On model.dbt_energia.stg_migracao: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.stg_migracao"} */
+alter view "energia"."main"."stg_migracao__dbt_tmp" rename to "stg_migracao"
+[0m16:18:56.406674 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.421011 [debug] [Thread-1 (]: On model.dbt_energia.stg_migracao: COMMIT
+[0m16:18:56.421609 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.stg_migracao"
+[0m16:18:56.421980 [debug] [Thread-1 (]: On model.dbt_energia.stg_migracao: COMMIT
+[0m16:18:56.425973 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m16:18:56.432554 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.stg_migracao"
+[0m16:18:56.432966 [debug] [Thread-1 (]: On model.dbt_energia.stg_migracao: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.stg_migracao"} */
+
+      drop view if exists "energia"."main"."stg_migracao__dbt_backup" cascade
+    
+[0m16:18:56.434055 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.436817 [debug] [Thread-1 (]: On model.dbt_energia.stg_migracao: Close
+[0m16:18:56.438865 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '76711e2c-9987-4a16-8b49-e430b10a798f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6588720f10>]}
+[0m16:18:56.439588 [info ] [Thread-1 (]: 1 of 7 OK created sql view model main.stg_migracao ............................. [[32mOK[0m in 0.09s]
+[0m16:18:56.440229 [debug] [Thread-1 (]: Finished running node model.dbt_energia.stg_migracao
+[0m16:18:56.440693 [debug] [Thread-1 (]: Began running node model.dbt_energia.stg_pld_ccee
+[0m16:18:56.441193 [info ] [Thread-1 (]: 2 of 7 START sql view model main.stg_pld_ccee .................................. [RUN]
+[0m16:18:56.442026 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_energia.stg_migracao, now model.dbt_energia.stg_pld_ccee)
+[0m16:18:56.442467 [debug] [Thread-1 (]: Began compiling node model.dbt_energia.stg_pld_ccee
+[0m16:18:56.444940 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_energia.stg_pld_ccee"
+[0m16:18:56.445449 [debug] [Thread-1 (]: Began executing node model.dbt_energia.stg_pld_ccee
+[0m16:18:56.449073 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_energia.stg_pld_ccee"
+[0m16:18:56.449653 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.stg_pld_ccee"
+[0m16:18:56.450153 [debug] [Thread-1 (]: On model.dbt_energia.stg_pld_ccee: BEGIN
+[0m16:18:56.450521 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:18:56.451546 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.451952 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.stg_pld_ccee"
+[0m16:18:56.452334 [debug] [Thread-1 (]: On model.dbt_energia.stg_pld_ccee: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.stg_pld_ccee"} */
+
+  
+  create view "energia"."main"."stg_pld_ccee__dbt_tmp" as (
+    with source as (
+    select *
+    from read_parquet('/opt/airflow/data/raw/pld_ccee_*.parquet')
+),
+
+renamed as (
+    select
+        cast(data_referencia as date)   as data_referencia,
+        trim(submercado)                as submercado,
+        cast(pld_medio_mwh as double)   as pld_medio_mwh,
+        cast(pld_minimo_mwh as double)  as pld_minimo_mwh,
+        cast(pld_maximo_mwh as double)  as pld_maximo_mwh
+    from source
+    where pld_medio_mwh > 0
+)
+
+select * from renamed
+  );
+
+[0m16:18:56.454040 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.457861 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.stg_pld_ccee"
+[0m16:18:56.458264 [debug] [Thread-1 (]: On model.dbt_energia.stg_pld_ccee: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.stg_pld_ccee"} */
+alter view "energia"."main"."stg_pld_ccee__dbt_tmp" rename to "stg_pld_ccee"
+[0m16:18:56.459267 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.460753 [debug] [Thread-1 (]: On model.dbt_energia.stg_pld_ccee: COMMIT
+[0m16:18:56.461287 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.stg_pld_ccee"
+[0m16:18:56.461691 [debug] [Thread-1 (]: On model.dbt_energia.stg_pld_ccee: COMMIT
+[0m16:18:56.464696 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m16:18:56.468149 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.stg_pld_ccee"
+[0m16:18:56.468635 [debug] [Thread-1 (]: On model.dbt_energia.stg_pld_ccee: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.stg_pld_ccee"} */
+
+      drop view if exists "energia"."main"."stg_pld_ccee__dbt_backup" cascade
+    
+[0m16:18:56.469897 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.471621 [debug] [Thread-1 (]: On model.dbt_energia.stg_pld_ccee: Close
+[0m16:18:56.472325 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '76711e2c-9987-4a16-8b49-e430b10a798f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6588723950>]}
+[0m16:18:56.472993 [info ] [Thread-1 (]: 2 of 7 OK created sql view model main.stg_pld_ccee ............................. [[32mOK[0m in 0.03s]
+[0m16:18:56.473545 [debug] [Thread-1 (]: Finished running node model.dbt_energia.stg_pld_ccee
+[0m16:18:56.474000 [debug] [Thread-1 (]: Began running node model.dbt_energia.stg_tarifas_aneel
+[0m16:18:56.474589 [info ] [Thread-1 (]: 3 of 7 START sql view model main.stg_tarifas_aneel ............................. [RUN]
+[0m16:18:56.475026 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_energia.stg_pld_ccee, now model.dbt_energia.stg_tarifas_aneel)
+[0m16:18:56.475387 [debug] [Thread-1 (]: Began compiling node model.dbt_energia.stg_tarifas_aneel
+[0m16:18:56.477790 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_energia.stg_tarifas_aneel"
+[0m16:18:56.478330 [debug] [Thread-1 (]: Began executing node model.dbt_energia.stg_tarifas_aneel
+[0m16:18:56.482028 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_energia.stg_tarifas_aneel"
+[0m16:18:56.482605 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.stg_tarifas_aneel"
+[0m16:18:56.482965 [debug] [Thread-1 (]: On model.dbt_energia.stg_tarifas_aneel: BEGIN
+[0m16:18:56.483300 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:18:56.484315 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.484756 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.stg_tarifas_aneel"
+[0m16:18:56.485115 [debug] [Thread-1 (]: On model.dbt_energia.stg_tarifas_aneel: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.stg_tarifas_aneel"} */
+
+  
+  create view "energia"."main"."stg_tarifas_aneel__dbt_tmp" as (
+    with source as (
+    select *
+    from read_parquet('/opt/airflow/data/raw/tarifas_aneel_*.parquet')
+),
+
+renamed as (
+    select
+        trim(distribuidora)             as distribuidora,
+        trim(uf)                        as uf,
+        cast(ano as integer)            as ano,
+        cast(vigencia_inicio as date)   as vigencia_inicio,
+        cast(tarifa_mwh as double)      as tarifa_mwh,
+        cast(tarifa_tp_mwh as double)   as tarifa_tp_mwh,
+        cast(tarifa_hfp_mwh as double)  as tarifa_hfp_mwh
+    from source
+    where tarifa_mwh > 0
+)
+
+select * from renamed
+  );
+
+[0m16:18:56.487342 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m16:18:56.491401 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.stg_tarifas_aneel"
+[0m16:18:56.491857 [debug] [Thread-1 (]: On model.dbt_energia.stg_tarifas_aneel: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.stg_tarifas_aneel"} */
+alter view "energia"."main"."stg_tarifas_aneel__dbt_tmp" rename to "stg_tarifas_aneel"
+[0m16:18:56.493000 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.494628 [debug] [Thread-1 (]: On model.dbt_energia.stg_tarifas_aneel: COMMIT
+[0m16:18:56.495033 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.stg_tarifas_aneel"
+[0m16:18:56.495414 [debug] [Thread-1 (]: On model.dbt_energia.stg_tarifas_aneel: COMMIT
+[0m16:18:56.498647 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m16:18:56.501715 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.stg_tarifas_aneel"
+[0m16:18:56.502208 [debug] [Thread-1 (]: On model.dbt_energia.stg_tarifas_aneel: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.stg_tarifas_aneel"} */
+
+      drop view if exists "energia"."main"."stg_tarifas_aneel__dbt_backup" cascade
+    
+[0m16:18:56.503467 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.505197 [debug] [Thread-1 (]: On model.dbt_energia.stg_tarifas_aneel: Close
+[0m16:18:56.505893 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '76711e2c-9987-4a16-8b49-e430b10a798f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f658b5aa910>]}
+[0m16:18:56.506565 [info ] [Thread-1 (]: 3 of 7 OK created sql view model main.stg_tarifas_aneel ........................ [[32mOK[0m in 0.03s]
+[0m16:18:56.507133 [debug] [Thread-1 (]: Finished running node model.dbt_energia.stg_tarifas_aneel
+[0m16:18:56.507577 [debug] [Thread-1 (]: Began running node model.dbt_energia.mart_migracao_mercado_livre
+[0m16:18:56.508420 [info ] [Thread-1 (]: 4 of 7 START sql table model main.mart_migracao_mercado_livre .................. [RUN]
+[0m16:18:56.508878 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_energia.stg_tarifas_aneel, now model.dbt_energia.mart_migracao_mercado_livre)
+[0m16:18:56.509274 [debug] [Thread-1 (]: Began compiling node model.dbt_energia.mart_migracao_mercado_livre
+[0m16:18:56.512585 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_energia.mart_migracao_mercado_livre"
+[0m16:18:56.513518 [debug] [Thread-1 (]: Began executing node model.dbt_energia.mart_migracao_mercado_livre
+[0m16:18:56.537463 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_energia.mart_migracao_mercado_livre"
+[0m16:18:56.538737 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.mart_migracao_mercado_livre"
+[0m16:18:56.539152 [debug] [Thread-1 (]: On model.dbt_energia.mart_migracao_mercado_livre: BEGIN
+[0m16:18:56.539514 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:18:56.540565 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.541041 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.mart_migracao_mercado_livre"
+[0m16:18:56.541446 [debug] [Thread-1 (]: On model.dbt_energia.mart_migracao_mercado_livre: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.mart_migracao_mercado_livre"} */
+
+  
+    
+    
+
+    create  table
+      "energia"."main"."mart_migracao_mercado_livre__dbt_tmp"
+  
+    as (
+      with base as (
+    select
+        m.distribuidora,
+        m.uf,
+        m.ano,
+        m.consumidores_livres,
+        m.consumo_total_mwh,
+        m.pct_mercado_livre,
+        m.consumidores_livres
+            - lag(m.consumidores_livres)
+                over (partition by m.distribuidora order by m.ano)
+            as crescimento_absoluto
+    from "energia"."main"."stg_migracao" m
+)
+
+select
+    *,
+    round(
+        crescimento_absoluto * 100.0
+        / nullif(consumidores_livres - crescimento_absoluto, 0),
+    2) as crescimento_pct
+from base
+order by ano desc, consumidores_livres desc
+    );
+  
+  
+[0m16:18:56.564559 [debug] [Thread-1 (]: SQL status: OK in 0.023 seconds
+[0m16:18:56.569045 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.mart_migracao_mercado_livre"
+[0m16:18:56.569611 [debug] [Thread-1 (]: On model.dbt_energia.mart_migracao_mercado_livre: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.mart_migracao_mercado_livre"} */
+alter table "energia"."main"."mart_migracao_mercado_livre__dbt_tmp" rename to "mart_migracao_mercado_livre"
+[0m16:18:56.571238 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.578449 [debug] [Thread-1 (]: On model.dbt_energia.mart_migracao_mercado_livre: COMMIT
+[0m16:18:56.579132 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.mart_migracao_mercado_livre"
+[0m16:18:56.579604 [debug] [Thread-1 (]: On model.dbt_energia.mart_migracao_mercado_livre: COMMIT
+[0m16:18:56.584353 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m16:18:56.588255 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.mart_migracao_mercado_livre"
+[0m16:18:56.588963 [debug] [Thread-1 (]: On model.dbt_energia.mart_migracao_mercado_livre: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.mart_migracao_mercado_livre"} */
+
+      drop table if exists "energia"."main"."mart_migracao_mercado_livre__dbt_backup" cascade
+    
+[0m16:18:56.590177 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.591891 [debug] [Thread-1 (]: On model.dbt_energia.mart_migracao_mercado_livre: Close
+[0m16:18:56.592621 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '76711e2c-9987-4a16-8b49-e430b10a798f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f658878ec50>]}
+[0m16:18:56.593344 [info ] [Thread-1 (]: 4 of 7 OK created sql table model main.mart_migracao_mercado_livre ............. [[32mOK[0m in 0.08s]
+[0m16:18:56.594025 [debug] [Thread-1 (]: Finished running node model.dbt_energia.mart_migracao_mercado_livre
+[0m16:18:56.594520 [debug] [Thread-1 (]: Began running node model.dbt_energia.int_pld_vs_tarifa
+[0m16:18:56.595205 [info ] [Thread-1 (]: 5 of 7 START sql view model main.int_pld_vs_tarifa ............................. [RUN]
+[0m16:18:56.595709 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_energia.mart_migracao_mercado_livre, now model.dbt_energia.int_pld_vs_tarifa)
+[0m16:18:56.596145 [debug] [Thread-1 (]: Began compiling node model.dbt_energia.int_pld_vs_tarifa
+[0m16:18:56.600272 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_energia.int_pld_vs_tarifa"
+[0m16:18:56.601438 [debug] [Thread-1 (]: Began executing node model.dbt_energia.int_pld_vs_tarifa
+[0m16:18:56.606100 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_energia.int_pld_vs_tarifa"
+[0m16:18:56.607219 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.int_pld_vs_tarifa"
+[0m16:18:56.607614 [debug] [Thread-1 (]: On model.dbt_energia.int_pld_vs_tarifa: BEGIN
+[0m16:18:56.608016 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:18:56.609071 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.609494 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.int_pld_vs_tarifa"
+[0m16:18:56.609968 [debug] [Thread-1 (]: On model.dbt_energia.int_pld_vs_tarifa: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.int_pld_vs_tarifa"} */
+
+  
+  create view "energia"."main"."int_pld_vs_tarifa__dbt_tmp" as (
+    with pld as (
+    select
+        year(data_referencia)               as ano,
+        submercado,
+        avg(pld_medio_mwh)                  as pld_medio_anual,
+        min(pld_minimo_mwh)                 as pld_minimo_anual,
+        max(pld_maximo_mwh)                 as pld_maximo_anual
+    from "energia"."main"."stg_pld_ccee"
+    group by 1, 2
+),
+
+tarifas as (
+    select
+        distribuidora,
+        uf,
+        ano,
+        avg(tarifa_mwh) as tarifa_media_mwh
+    from "energia"."main"."stg_tarifas_aneel"
+    group by 1, 2, 3
+),
+
+joined as (
+    select
+        t.distribuidora,
+        t.uf,
+        t.ano,
+        t.tarifa_media_mwh,
+        p.pld_medio_anual,
+        p.pld_minimo_anual,
+        p.pld_maximo_anual,
+        t.tarifa_media_mwh - p.pld_medio_anual as spread_mwh,
+        round(
+            (t.tarifa_media_mwh - p.pld_medio_anual)
+            / t.tarifa_media_mwh * 100, 2
+        ) as economia_pct
+    from tarifas t
+    left join pld p
+        on t.ano = p.ano
+        and p.submercado = case
+            when t.uf in ('SP','RJ','MG','ES','GO','MT','MS','DF') then 'SE/CO'
+            when t.uf in ('RS','SC','PR')                          then 'S'
+            when t.uf in ('BA','SE','AL','PE','PB','RN','CE','PI','MA') then 'NE'
+            else 'N'
+        end
+)
+
+select * from joined
+  );
+
+[0m16:18:56.612914 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m16:18:56.617180 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.int_pld_vs_tarifa"
+[0m16:18:56.617674 [debug] [Thread-1 (]: On model.dbt_energia.int_pld_vs_tarifa: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.int_pld_vs_tarifa"} */
+alter view "energia"."main"."int_pld_vs_tarifa__dbt_tmp" rename to "int_pld_vs_tarifa"
+[0m16:18:56.619000 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.621048 [debug] [Thread-1 (]: On model.dbt_energia.int_pld_vs_tarifa: COMMIT
+[0m16:18:56.621600 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.int_pld_vs_tarifa"
+[0m16:18:56.622172 [debug] [Thread-1 (]: On model.dbt_energia.int_pld_vs_tarifa: COMMIT
+[0m16:18:56.626623 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m16:18:56.630174 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.int_pld_vs_tarifa"
+[0m16:18:56.630707 [debug] [Thread-1 (]: On model.dbt_energia.int_pld_vs_tarifa: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.int_pld_vs_tarifa"} */
+
+      drop view if exists "energia"."main"."int_pld_vs_tarifa__dbt_backup" cascade
+    
+[0m16:18:56.631671 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m16:18:56.633224 [debug] [Thread-1 (]: On model.dbt_energia.int_pld_vs_tarifa: Close
+[0m16:18:56.633939 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '76711e2c-9987-4a16-8b49-e430b10a798f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f658b489990>]}
+[0m16:18:56.634661 [info ] [Thread-1 (]: 5 of 7 OK created sql view model main.int_pld_vs_tarifa ........................ [[32mOK[0m in 0.04s]
+[0m16:18:56.635292 [debug] [Thread-1 (]: Finished running node model.dbt_energia.int_pld_vs_tarifa
+[0m16:18:56.636730 [debug] [Thread-1 (]: Began running node model.dbt_energia.mart_comparativo_tarifas
+[0m16:18:56.637507 [info ] [Thread-1 (]: 6 of 7 START sql table model main.mart_comparativo_tarifas ..................... [RUN]
+[0m16:18:56.638325 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_energia.int_pld_vs_tarifa, now model.dbt_energia.mart_comparativo_tarifas)
+[0m16:18:56.638843 [debug] [Thread-1 (]: Began compiling node model.dbt_energia.mart_comparativo_tarifas
+[0m16:18:56.642711 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_energia.mart_comparativo_tarifas"
+[0m16:18:56.643375 [debug] [Thread-1 (]: Began executing node model.dbt_energia.mart_comparativo_tarifas
+[0m16:18:56.647442 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_energia.mart_comparativo_tarifas"
+[0m16:18:56.648089 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.mart_comparativo_tarifas"
+[0m16:18:56.648481 [debug] [Thread-1 (]: On model.dbt_energia.mart_comparativo_tarifas: BEGIN
+[0m16:18:56.648841 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:18:56.650068 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.650650 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.mart_comparativo_tarifas"
+[0m16:18:56.651208 [debug] [Thread-1 (]: On model.dbt_energia.mart_comparativo_tarifas: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.mart_comparativo_tarifas"} */
+
+  
+    
+    
+
+    create  table
+      "energia"."main"."mart_comparativo_tarifas__dbt_tmp"
+  
+    as (
+      select
+    distribuidora,
+    uf,
+    ano,
+    tarifa_media_mwh,
+    pld_medio_anual,
+    spread_mwh,
+    economia_pct,
+    case
+        when economia_pct > 20 then 'Alta vantagem'
+        when economia_pct > 10 then 'Media vantagem'
+        when economia_pct > 0  then 'Baixa vantagem'
+        else 'Mercado livre desfavoravel'
+    end as classificacao_vantagem
+from "energia"."main"."int_pld_vs_tarifa"
+order by ano desc, economia_pct desc
+    );
+  
+  
+[0m16:18:56.673869 [debug] [Thread-1 (]: SQL status: OK in 0.022 seconds
+[0m16:18:56.677964 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.mart_comparativo_tarifas"
+[0m16:18:56.678422 [debug] [Thread-1 (]: On model.dbt_energia.mart_comparativo_tarifas: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.mart_comparativo_tarifas"} */
+alter table "energia"."main"."mart_comparativo_tarifas__dbt_tmp" rename to "mart_comparativo_tarifas"
+[0m16:18:56.679555 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.681587 [debug] [Thread-1 (]: On model.dbt_energia.mart_comparativo_tarifas: COMMIT
+[0m16:18:56.682102 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.mart_comparativo_tarifas"
+[0m16:18:56.682457 [debug] [Thread-1 (]: On model.dbt_energia.mart_comparativo_tarifas: COMMIT
+[0m16:18:56.686857 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m16:18:56.692689 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.mart_comparativo_tarifas"
+[0m16:18:56.693199 [debug] [Thread-1 (]: On model.dbt_energia.mart_comparativo_tarifas: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.mart_comparativo_tarifas"} */
+
+      drop table if exists "energia"."main"."mart_comparativo_tarifas__dbt_backup" cascade
+    
+[0m16:18:56.694297 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.695904 [debug] [Thread-1 (]: On model.dbt_energia.mart_comparativo_tarifas: Close
+[0m16:18:56.696545 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '76711e2c-9987-4a16-8b49-e430b10a798f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f65887c7790>]}
+[0m16:18:56.697180 [info ] [Thread-1 (]: 6 of 7 OK created sql table model main.mart_comparativo_tarifas ................ [[32mOK[0m in 0.06s]
+[0m16:18:56.697797 [debug] [Thread-1 (]: Finished running node model.dbt_energia.mart_comparativo_tarifas
+[0m16:18:56.698223 [debug] [Thread-1 (]: Began running node model.dbt_energia.mart_simulador_economia
+[0m16:18:56.698813 [info ] [Thread-1 (]: 7 of 7 START sql table model main.mart_simulador_economia ...................... [RUN]
+[0m16:18:56.699260 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_energia.mart_comparativo_tarifas, now model.dbt_energia.mart_simulador_economia)
+[0m16:18:56.699615 [debug] [Thread-1 (]: Began compiling node model.dbt_energia.mart_simulador_economia
+[0m16:18:56.703561 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_energia.mart_simulador_economia"
+[0m16:18:56.704415 [debug] [Thread-1 (]: Began executing node model.dbt_energia.mart_simulador_economia
+[0m16:18:56.708811 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_energia.mart_simulador_economia"
+[0m16:18:56.709545 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.mart_simulador_economia"
+[0m16:18:56.710026 [debug] [Thread-1 (]: On model.dbt_energia.mart_simulador_economia: BEGIN
+[0m16:18:56.710392 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:18:56.711406 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.711876 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.mart_simulador_economia"
+[0m16:18:56.712394 [debug] [Thread-1 (]: On model.dbt_energia.mart_simulador_economia: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.mart_simulador_economia"} */
+
+  
+    
+    
+
+    create  table
+      "energia"."main"."mart_simulador_economia__dbt_tmp"
+  
+    as (
+      select
+    distribuidora,
+    uf,
+    ano,
+    tarifa_media_mwh,
+    pld_medio_anual,
+    spread_mwh,
+    economia_pct,
+    spread_mwh * 100   as economia_100mwh_mes,
+    spread_mwh * 500   as economia_500mwh_mes,
+    spread_mwh * 1000  as economia_1000mwh_mes,
+    spread_mwh * 3000  as economia_3000mwh_mes
+from "energia"."main"."int_pld_vs_tarifa"
+where spread_mwh > 0
+order by ano desc, economia_pct desc
+    );
+  
+  
+[0m16:18:56.726677 [debug] [Thread-1 (]: SQL status: OK in 0.014 seconds
+[0m16:18:56.731059 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.mart_simulador_economia"
+[0m16:18:56.731534 [debug] [Thread-1 (]: On model.dbt_energia.mart_simulador_economia: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.mart_simulador_economia"} */
+alter table "energia"."main"."mart_simulador_economia__dbt_tmp" rename to "mart_simulador_economia"
+[0m16:18:56.732882 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.734747 [debug] [Thread-1 (]: On model.dbt_energia.mart_simulador_economia: COMMIT
+[0m16:18:56.735161 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.mart_simulador_economia"
+[0m16:18:56.735566 [debug] [Thread-1 (]: On model.dbt_energia.mart_simulador_economia: COMMIT
+[0m16:18:56.739267 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m16:18:56.742561 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_energia.mart_simulador_economia"
+[0m16:18:56.742986 [debug] [Thread-1 (]: On model.dbt_energia.mart_simulador_economia: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "dbt_energia", "target_name": "dev", "node_id": "model.dbt_energia.mart_simulador_economia"} */
+
+      drop table if exists "energia"."main"."mart_simulador_economia__dbt_backup" cascade
+    
+[0m16:18:56.743943 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m16:18:56.745420 [debug] [Thread-1 (]: On model.dbt_energia.mart_simulador_economia: Close
+[0m16:18:56.746122 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '76711e2c-9987-4a16-8b49-e430b10a798f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f658875ff90>]}
+[0m16:18:56.746778 [info ] [Thread-1 (]: 7 of 7 OK created sql table model main.mart_simulador_economia ................. [[32mOK[0m in 0.05s]
+[0m16:18:56.747401 [debug] [Thread-1 (]: Finished running node model.dbt_energia.mart_simulador_economia
+[0m16:18:56.749098 [debug] [MainThread]: Using duckdb connection "master"
+[0m16:18:56.749504 [debug] [MainThread]: On master: BEGIN
+[0m16:18:56.749924 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:18:56.750733 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m16:18:56.751064 [debug] [MainThread]: On master: COMMIT
+[0m16:18:56.751378 [debug] [MainThread]: Using duckdb connection "master"
+[0m16:18:56.751710 [debug] [MainThread]: On master: COMMIT
+[0m16:18:56.752407 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m16:18:56.752779 [debug] [MainThread]: On master: Close
+[0m16:18:56.753278 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:18:56.753651 [debug] [MainThread]: Connection 'model.dbt_energia.mart_simulador_economia' was properly closed.
+[0m16:18:56.754157 [info ] [MainThread]: 
+[0m16:18:56.754526 [info ] [MainThread]: Finished running 3 table models, 4 view models in 0 hours 0 minutes and 0.54 seconds (0.54s).
+[0m16:18:56.755980 [debug] [MainThread]: Command end result
+[0m16:18:56.782827 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_energia/target/manifest.json
+[0m16:18:56.784947 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_energia/target/semantic_manifest.json
+[0m16:18:56.792117 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_energia/target/run_results.json
+[0m16:18:56.792613 [info ] [MainThread]: 
+[0m16:18:56.793066 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m16:18:56.793403 [info ] [MainThread]: 
+[0m16:18:56.793750 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
+[0m16:18:56.794745 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.625188, "process_in_blocks": "2224", "process_kernel_time": 0.53383, "process_mem_max_rss": "200296", "process_out_blocks": "3872", "process_user_time": 4.393832}
+[0m16:18:56.795258 [debug] [MainThread]: Command `dbt run` succeeded at 16:18:56.795159 after 2.63 seconds
+[0m16:18:56.795693 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6597563c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f65989adad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f659bc21610>]}
+[0m16:18:56.796130 [debug] [MainThread]: Flushing usage events
+[0m16:18:57.749057 [debug] [MainThread]: An error was encountered while trying to flush usage events

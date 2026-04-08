@@ -1,0 +1,27 @@
+[0m16:18:54  Running with dbt=1.11.7
+[0m16:18:54  Registered adapter: duckdb=1.10.1
+[0m16:18:54  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m16:18:56  Found 7 models, 475 macros
+[0m16:18:56  
+[0m16:18:56  Concurrency: 1 threads (target='dev')
+[0m16:18:56  
+[0m16:18:56  1 of 7 START sql view model main.stg_migracao .................................. [RUN]
+[0m16:18:56  1 of 7 OK created sql view model main.stg_migracao ............................. [[32mOK[0m in 0.09s]
+[0m16:18:56  2 of 7 START sql view model main.stg_pld_ccee .................................. [RUN]
+[0m16:18:56  2 of 7 OK created sql view model main.stg_pld_ccee ............................. [[32mOK[0m in 0.03s]
+[0m16:18:56  3 of 7 START sql view model main.stg_tarifas_aneel ............................. [RUN]
+[0m16:18:56  3 of 7 OK created sql view model main.stg_tarifas_aneel ........................ [[32mOK[0m in 0.03s]
+[0m16:18:56  4 of 7 START sql table model main.mart_migracao_mercado_livre .................. [RUN]
+[0m16:18:56  4 of 7 OK created sql table model main.mart_migracao_mercado_livre ............. [[32mOK[0m in 0.08s]
+[0m16:18:56  5 of 7 START sql view model main.int_pld_vs_tarifa ............................. [RUN]
+[0m16:18:56  5 of 7 OK created sql view model main.int_pld_vs_tarifa ........................ [[32mOK[0m in 0.04s]
+[0m16:18:56  6 of 7 START sql table model main.mart_comparativo_tarifas ..................... [RUN]
+[0m16:18:56  6 of 7 OK created sql table model main.mart_comparativo_tarifas ................ [[32mOK[0m in 0.06s]
+[0m16:18:56  7 of 7 START sql table model main.mart_simulador_economia ...................... [RUN]
+[0m16:18:56  7 of 7 OK created sql table model main.mart_simulador_economia ................. [[32mOK[0m in 0.05s]
+[0m16:18:56  
+[0m16:18:56  Finished running 3 table models, 4 view models in 0 hours 0 minutes and 0.54 seconds (0.54s).
+[0m16:18:56  
+[0m16:18:56  [32mCompleted successfully[0m
+[0m16:18:56  
+[0m16:18:56  Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
